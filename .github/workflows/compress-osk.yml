@@ -33,4 +33,4 @@ jobs:
             - name: release
               uses: softprops/action-gh-release@v2
               with:
-                files: skin.osk
+                files: '# a r i s u - astro angelfish edit.osz'
