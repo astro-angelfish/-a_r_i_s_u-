@@ -1,0 +1,31 @@
+name: "compress-osk"
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write
+        
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Zipping tools
+              run: |
+                sudo apt-get update
+                sudo apt-get install zip
+            
+            - name: Create OSK file
+              run: |
+                zip '# a r i s u - astro angelfish edit.osz' $(ls)
+
+            - name: publish
+              uses: actions/upload-artifact@v4
+              with:
+                name: '# a r i s u - astro angelfish edit.osz'
+                path: '# a r i s u - astro angelfish edit.osz'
