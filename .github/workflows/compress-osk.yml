@@ -29,3 +29,15 @@ jobs:
               with:
                 name: '# a r i s u - astro angelfish edit.osz'
                 path: 'skin.osz'
+
+            - name: release
+              uses: ChanTsune/release-with-commit@v2.8.0
+              with:
+                tag_name: ${{ github.sha }}
+                release_name: Release ${{ github.sha }}
+                body: |
+                  Automated release. please feel free to dig in because i'm lazy for writing them.
+                draft: false
+                prerelease: false
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
