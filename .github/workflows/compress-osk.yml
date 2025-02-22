@@ -33,6 +33,8 @@ jobs:
             - name: release
               uses: ChanTsune/release-with-commit@v2.8.0
               with:
+                regexp: '.'
+                regexp_options: 'us'
                 tag_name: ${{ github.sha }}
                 release_name: Release ${{ github.sha }}
                 body: |
