@@ -31,21 +31,6 @@ jobs:
                 path: 'skin.osz'
 
             - name: release
-              id: release
-              uses: elgohr/Github-Release-Action@v5
+              uses: softprops/action-gh-release@v2
               with:
-                title: ${{ github.ref }}
-                tag: ${{ github.ref }}
-              env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            
-            - name: release assets
-              uses: actions/upload-release-asset@v1
-              env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              
-              with:
-                upload_url: ${{ steps.release.outputs.upload_url }}
-                asset_path: ./skin.osz
-                asset_name: skin.osz
-                asset_content_type: application/zip
+                files: skin.osk
