@@ -22,10 +22,10 @@ jobs:
             
             - name: Create OSK file
               run: |
-                zip '# a r i s u - astro angelfish edit.osz' $(ls)
+                zip 'skin.osz' *
 
             - name: publish
               uses: actions/upload-artifact@v4
               with:
                 name: '# a r i s u - astro angelfish edit.osz'
-                path: '# a r i s u - astro angelfish edit.osz'
+                path: 'skin.osz'
