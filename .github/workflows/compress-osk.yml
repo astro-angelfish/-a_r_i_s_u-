@@ -2,8 +2,8 @@ name: "compress-osk"
 
 on:
     push:
-        branches:
-            - main
+        tags:
+            - 'v*'
 
 jobs:
     build:
@@ -31,12 +31,10 @@ jobs:
                 path: 'skin.osz'
 
             - name: release
-              uses: ChanTsune/release-with-commit@v2.8.0
+              uses: actions/create_release@v1
               with:
-                regexp: '.'
-                regexp_options: 'us'
-                tag_name: ${{ github.sha }}
-                release_name: Release ${{ github.sha }}
+                tag_name: ${{ github.ref }}
+                release_name: Release ${{ github.ref }}
                 body: |
                   Automated release. please feel free to dig in because i'm lazy for writing them.
                 draft: false
